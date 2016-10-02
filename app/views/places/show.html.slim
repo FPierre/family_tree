@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Thoroughfare:
+  = @place.thoroughfare
+p
+  strong City:
+  = @place.city
+p
+  strong Country:
+  = @place.country
+p
+  strong Postal code:
+  = @place.postal_code
+p
+  strong Lat:
+  = @place.lat
+p
+  strong Lng:
+  = @place.lng
+
+= link_to 'Edit', edit_place_path(@place)
+'|
+= link_to 'Back', places_path
