@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong First name:
+  = @person.first_name
+p
+  strong Last name:
+  = @person.last_name
+p
+  strong Gender:
+  = @person.gender
+p
+  strong Birth date:
+  = @person.birth_date
+p
+  strong Death date:
+  = @person.death_date
+
+= link_to 'Edit', edit_person_path(@person)
+'|
+= link_to 'Back', people_path
