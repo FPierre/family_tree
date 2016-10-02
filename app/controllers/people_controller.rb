@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_family, only: [:show, :new, :edit, :update, :destroy]
+  before_action :set_person, only: [:show,       :edit, :update, :destroy]
 
   def index
     @people = Person.all
@@ -40,8 +41,12 @@ class PeopleController < ApplicationController
 
   private
 
+  def set_family
+    @family = Family.find params[:family_id]
+  end
+
   def set_person
-    @person = Person.find(params[:id])
+    @person = Person.find params[:id]
   end
 
   def person_params
