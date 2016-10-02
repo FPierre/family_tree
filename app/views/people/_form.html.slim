@@ -2,20 +2,34 @@
   - if @person.errors.any?
     #error_explanation
       h2 = "#{pluralize(@person.errors.count, "error")} prohibited this person from being saved:"
+
       ul
         - @person.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :gender
-    = f.number_field :gender
-  .field
-    = f.label :birth_date
-    = f.date_select :birth_date
-  .field
-    = f.label :death_date
-    = f.date_select :death_date
-  .actions = f.submit
+  = f.label :first_name
+  = f.text_field :first_name
+
+  = f.label :gender
+  = f.number_field :gender
+
+  = f.label :birth_date
+  = f.date_select :birth_date
+
+  = f.label :death_date
+  = f.date_select :death_date
+
+  = f.fields_for :place do |place_form|
+    = place_form.label :thoroughfare
+    = place_form.text_field :thoroughfare
+
+    = place_form.label :city
+    = place_form.text_field :city
+
+    = place_form.label :postal_code
+    = place_form.text_field :postal_code
+
+    = place_form.label :country
+    = place_form.text_field :country
+
+  = f.submit

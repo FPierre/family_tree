@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
-  before_action :set_family, only: [:show, :new, :edit, :update, :destroy]
-  before_action :set_person, only: [:show,       :edit, :update, :destroy]
+  before_action :set_family, only: [       :new, :edit, :create, :update, :destroy]
+  before_action :set_person, only: [:show,       :edit,          :update, :destroy]
 
   def index
     @people = Person.all
@@ -10,17 +10,19 @@ class PeopleController < ApplicationController
   end
 
   def new
-    @person = Person.new
+    @person = @family.people.new
+
+    @person.build_place
   end
 
   def edit
   end
 
   def create
-    @person = Person.new(person_params)
+    @person = @family.people.new(person_params)
 
     if @person.save
-      redirect_to @person, notice: 'Person was successfully created.'
+      redirect_to family_people_path(@family, @person), notice: 'Person was successfully created.'
     else
       render :new
     end
@@ -50,6 +52,12 @@ class PeopleController < ApplicationController
   end
 
   def person_params
-    params.require(:person).permit(:first_name, :gender, :birth_date, :death_date)
+    params.require(:person).permit(
+      :birth_date,
+      :death_date,
+      :first_name,
+      :gender,
+      place_attributes: [:id, :city, :country, :postal_code, :thoroughfare]
+    )
   end
 end
