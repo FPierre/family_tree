@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'awesome_print', '~> 1.7'
+gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'devise', '~> 4.2'
 gem 'jquery-rails', '~> 4.2', '>= 4.2.1'
 gem 'puma', '~> 3.0'
@@ -13,6 +14,10 @@ gem 'slim-rails', '~> 3.1', '>= 3.1.1'
 gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.7'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
