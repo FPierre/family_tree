@@ -10,6 +10,9 @@
 .row
   h2 All Members
 
-  ul
-    - @members.each do |person|
-      li = link_to(person.first_name, person)
+  = datagrid_form_for @grid, method: :get, url: family_path
+
+.row
+  = paginate(@grid.assets)
+  = datagrid_table @grid
+  = paginate(@grid.assets)
