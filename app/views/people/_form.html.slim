@@ -7,17 +7,30 @@
         - @person.errors.full_messages.each do |message|
           li = message
 
-  = f.label :first_name
-  = f.text_field :first_name
+  .row
+    .col-xs-12
+      = f.label :first_name
+      .input-group
+        .input-group-addon = fa_icon 'user'
+        = f.text_field :first_name, class: 'form-control', placeholder: 'James, Barry, Blake, ...'
 
-  = f.label :gender
-  = f.number_field :gender
+  .row
+    .col-xs-12
+      = f.label :gender
+      = f.number_field :gender, class: 'form-control'
 
-  = f.label :birth_date
-  = f.date_select :birth_date
+  .row
+    .col-xs-6
+      = f.label :birth_date
+      .input-group
+        .input-group-addon = fa_icon 'birthday-cake'
+        = f.text_field :birth_date, class: 'form-control', placeholder: 'mm/dd/yyyy'
 
-  = f.label :death_date
-  = f.date_select :death_date
+    .col-xs-6
+      = f.label :death_date
+      .input-group
+        .input-group-addon = fa_icon 'hospital-o'
+        = f.text_field :death_date, class: 'form-control', placeholder: 'mm/dd/yyyy'
 
   = f.fields_for :place do |place_form|
     = place_form.label :thoroughfare

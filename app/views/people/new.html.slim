@@ -1,7 +1,11 @@
 = content_for :navbar_title, 'Person'
 
-h1 New person
+.row
+  h1 New person
 
-== render 'form'
+.row
+  .col-md-6.offset-md-3
+    == render 'form'
 
-= link_to 'Cancel', family_path(@family), class: 'btn btn-secondary'
+.row
+  = link_to 'Cancel', family_path(@family), class: 'btn btn-secondary'
