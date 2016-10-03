@@ -6,7 +6,6 @@ class PeopleGrid
   end
 
   filter(:first_name, :string)
-  filter(:created_at, :date, range: true)
 
   column(:first_name)
   column(:created_at) do |model|
