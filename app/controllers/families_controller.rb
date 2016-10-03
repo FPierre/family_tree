@@ -2,6 +2,7 @@ class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :edit, :update, :destroy]
 
   def show
+    @members = @family.people
   end
 
   def new

@@ -4,6 +4,13 @@ p
   strong Name:
   = @family.name
 
+h2 Members:
+
+ul
+  - @members.each do |person|
+    li = link_to(person.first_name, person)
+
+
 = link_to 'Edit', edit_family_path(@family)
 '|
 = link_to 'Back', families_path
