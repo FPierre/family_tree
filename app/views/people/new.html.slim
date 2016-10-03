@@ -1,5 +1,7 @@
+= content_for :navbar_title, 'Person'
+
 h1 New person
 
 == render 'form'
 
-/ = link_to 'Back', family_people_path
+= link_to 'Cancel', family_path(@family), class: 'btn btn-secondary'

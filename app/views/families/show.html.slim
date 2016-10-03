@@ -1,16 +1,15 @@
-p#notice = notice
+= content_for :navbar_title, @family.name
 
-p
-  strong Name:
-  = @family.name
+.row
+  p#notice = notice
 
-h2 Members:
+.row
+  = link_to 'Edit', edit_family_path(@family), class: 'btn btn-secondary'
+  = link_to 'New person', new_family_person_path(@family), class: 'btn btn-success pull-xs-right'
 
-ul
-  - @members.each do |person|
-    li = link_to(person.first_name, person)
+.row
+  h2 All Members
 
-
-= link_to 'Edit', edit_family_path(@family)
-'|
-= link_to 'Back', families_path
+  ul
+    - @members.each do |person|
+      li = link_to(person.first_name, person)
