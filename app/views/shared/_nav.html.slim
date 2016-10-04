@@ -1,6 +1,7 @@
 nav.navbar.navbar-fixed-top.navbar-light.bg-faded
   a.navbar-brand href='#' = yield :navbar_title
 
-  ul.nav.navbar-nav.pull-xs-right
-    li.nav-item
-      a.nav-link href='#' #{current_user.email}
+  - if user_signed_in?
+    ul.nav.navbar-nav.pull-xs-right
+      li.nav-item
+        a.nav-link href='#' #{current_user.email}

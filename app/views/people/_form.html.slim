@@ -12,12 +12,20 @@
       = f.label :first_name
       .input-group
         .input-group-addon = fa_icon 'user'
-        = f.text_field :first_name, class: 'form-control', placeholder: 'James, Barry, Blake, ...'
+        = f.text_field :first_name, class: 'form-control', placeholder: 'James, Blake, ...'
 
   .row
     .col-xs-12
       = f.label :gender
-      = f.number_field :gender, class: 'form-control'
+      .input-group
+        .btn-group data-toggle='buttons'
+          = f.label :gender, class: 'btn btn-secondary' do
+            = fa_icon 'mars', text: Person.genders.keys.first.to_sym
+            = f.radio_button :gender, Person.genders.keys.first.to_sym
+
+          = f.label :gender, class: 'btn btn-secondary' do
+            = fa_icon 'venus', text: Person.genders.keys.second.to_sym
+            = f.radio_button :gender, Person.genders.keys.second.to_sym
 
   .row
     .col-xs-6
@@ -33,16 +41,31 @@
         = f.text_field :death_date, class: 'form-control', placeholder: 'mm/dd/yyyy'
 
   = f.fields_for :place do |place_form|
-    = place_form.label :thoroughfare
-    = place_form.text_field :thoroughfare
+    .row
+      .col-xs-12
+        = place_form.label :thoroughfare
+        .input-group
+          .input-group-addon = fa_icon 'road'
+          = place_form.text_field :thoroughfare, class: 'form-control', placeholder: '01 Avenue du Maine, ...'
 
-    = place_form.label :city
-    = place_form.text_field :city
+    .row
+      .col-xs-12.col-md-8
+        = place_form.label :city
+        .input-group
+          .input-group-addon = fa_icon 'building-o'
+          = place_form.text_field :city, class: 'form-control', placeholder: 'Paris 14ème, ...'
 
-    = place_form.label :postal_code
-    = place_form.text_field :postal_code
+      .col-xs-12.col-md-4
+        = place_form.label :postal_code
+        .input-group
+          .input-group-addon = fa_icon 'envelope'
+          = place_form.text_field :postal_code, class: 'form-control', placeholder: '74014, ...'
 
-    = place_form.label :country
-    = place_form.text_field :country
+    .row
+      .col-xs-12
+        = place_form.label :country
+        .input-group
+          .input-group-addon = fa_icon 'globe'
+          = place_form.text_field :country, class: 'form-control', placeholder: 'France, ...'
 
   = f.submit 'Create person', class: 'btn btn-success'

@@ -6,5 +6,5 @@ class Person < ApplicationRecord
 
   validates :first_name, :gender, presence: true
 
-  # enum gender: [:male, :female]
+  enum gender: [:male, :female]
 end
