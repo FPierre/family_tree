@@ -1,0 +1,26 @@
+.aside
+  .container
+    .row
+      .col-xs-12
+        .commands
+          ul.nav.nav-pills
+            li.nav-item
+              a.nav-link.active href='#' Load info
+
+            li.nav-item
+              a.nav-link href='#' Comment
+
+            li.nav-item
+              / a.nav-link href='#' Comment
+              a = fa_icon 'arrow-right', class: 'nav-link'
+
+    .row
+      .load-info
+        .row
+          .col-xs-4
+            | Age
+
+          .col-xs-8
+            | 66 years old
+
+        .row
