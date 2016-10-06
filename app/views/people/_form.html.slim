@@ -44,22 +44,6 @@
     .col-xs-12
       #places
 
-  / .row
-  /   .col-xs-12
-  /     ul.nav.nav-tabs role='tablist'
-  /       li.nav-item
-  /         a.nav-link.active data-toggle='tab' href='#birth-place' role='tab' birth place
-
-  /       li.nav-item
-  /         a.nav-link data-toggle='tab' href='#death-place' role='tab' death place
-
-  /     .tab-content
-  /       #birth-place.tab-pane.active role='tabpanel'
-  /         | birth-place
-
-  /       #death-place.tab-pane role='tabpanel'
-  /         | death-place
-
   / = f.fields_for :place do |place_form|
   /   .row
   /     .col-xs-12

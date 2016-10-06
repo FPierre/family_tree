@@ -7,7 +7,6 @@ class PlaceInitializer {
   initVue() {
     this.vue = new Vue({
       el: this.vueEl,
-      data: {},
       created() {
         console.log('created')
       }
