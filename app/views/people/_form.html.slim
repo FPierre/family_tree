@@ -40,32 +40,52 @@
         .input-group-addon = fa_icon 'hospital-o'
         = f.text_field :death_date, class: 'form-control', placeholder: 'mm/dd/yyyy'
 
-  = f.fields_for :place do |place_form|
-    .row
-      .col-xs-12
-        = place_form.label :thoroughfare
-        .input-group
-          .input-group-addon = fa_icon 'road'
-          = place_form.text_field :thoroughfare, class: 'form-control', placeholder: '01 Avenue du Maine, ...'
+  .row
+    .col-xs-12
+      #places
 
-    .row
-      .col-xs-12.col-md-8
-        = place_form.label :city
-        .input-group
-          .input-group-addon = fa_icon 'building-o'
-          = place_form.text_field :city, class: 'form-control', placeholder: 'Paris 14ème, ...'
+  / .row
+  /   .col-xs-12
+  /     ul.nav.nav-tabs role='tablist'
+  /       li.nav-item
+  /         a.nav-link.active data-toggle='tab' href='#birth-place' role='tab' birth place
 
-      .col-xs-12.col-md-4
-        = place_form.label :postal_code
-        .input-group
-          .input-group-addon = fa_icon 'envelope'
-          = place_form.text_field :postal_code, class: 'form-control', placeholder: '74014, ...'
+  /       li.nav-item
+  /         a.nav-link data-toggle='tab' href='#death-place' role='tab' death place
 
-    .row
-      .col-xs-12
-        = place_form.label :country
-        .input-group
-          .input-group-addon = fa_icon 'globe'
-          = place_form.text_field :country, class: 'form-control', placeholder: 'France, ...'
+  /     .tab-content
+  /       #birth-place.tab-pane.active role='tabpanel'
+  /         | birth-place
+
+  /       #death-place.tab-pane role='tabpanel'
+  /         | death-place
+
+  / = f.fields_for :place do |place_form|
+  /   .row
+  /     .col-xs-12
+  /       = place_form.label :thoroughfare
+  /       .input-group
+  /         .input-group-addon = fa_icon 'road'
+  /         = place_form.text_field :thoroughfare, class: 'form-control', placeholder: '01 Avenue du Maine, ...'
+
+  /   .row
+  /     .col-xs-12.col-md-8
+  /       = place_form.label :city
+  /       .input-group
+  /         .input-group-addon = fa_icon 'building-o'
+  /         = place_form.text_field :city, class: 'form-control', placeholder: 'Paris 14ème, ...'
+
+  /     .col-xs-12.col-md-4
+  /       = place_form.label :postal_code
+  /       .input-group
+  /         .input-group-addon = fa_icon 'envelope'
+  /         = place_form.text_field :postal_code, class: 'form-control', placeholder: '74014, ...'
+
+  /   .row
+  /     .col-xs-12
+  /       = place_form.label :country
+  /       .input-group
+  /         .input-group-addon = fa_icon 'globe'
+  /         = place_form.text_field :country, class: 'form-control', placeholder: 'France, ...'
 
   = f.submit 'Create person', class: 'btn btn-success'

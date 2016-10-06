@@ -12,7 +12,7 @@ class PeopleController < ApplicationController
   def new
     @person = @family.people.new
 
-    @person.build_place
+    # @person.build_place
   end
 
   def edit
