@@ -5,7 +5,7 @@
 //= require turbolinks
 //= require vue
 //
-//= require_directory Place
+//= require_directory ./Place
 //
 //= require_tree .
 

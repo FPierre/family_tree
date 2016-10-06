@@ -43,6 +43,23 @@
   .row
     .col-xs-12
       #places
+        .row
+          .col-xs-5
+            label Name
+            .input-group
+              .input-group-addon = fa_icon 'hospital-o'
+              select.form-control
+                option birth place
+                option death place
+
+          .col-xs-7
+            label Place
+            .input-group
+              .input-group-addon = fa_icon 'birthday-cake'
+              input.form-control type='text' name='place' placeholder='Search a city or address'
+
+
+
 
   / = f.fields_for :place do |place_form|
   /   .row
