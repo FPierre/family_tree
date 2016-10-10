@@ -43,20 +43,21 @@
   .row
     .col-xs-12
       #places
-        .row
-          .col-xs-5
-            label Name
-            .input-group
-              .input-group-addon = fa_icon 'hospital-o'
-              select.form-control
-                option birth place
-                option death place
+  .row
+    .col-xs-5
+      label Name
+      .input-group
+        .input-group-addon = fa_icon 'hospital-o'
+        select.form-control
+          option birth place
+          option death place
 
-          .col-xs-7
-            label Place
-            .input-group
-              .input-group-addon = fa_icon 'birthday-cake'
-              input.form-control type='text' name='place' placeholder='Search a city or address'
+  .row
+    .col-xs-12
+      label Place
+      .input-group
+        .input-group-addon = fa_icon 'birthday-cake'
+        input#address-input.form-control type='text' name='place' placeholder='Search a city or address'
 
 
 
@@ -89,4 +90,6 @@
   /         .input-group-addon = fa_icon 'globe'
   /         = place_form.text_field :country, class: 'form-control', placeholder: 'France, ...'
 
-  = f.submit 'Create person', class: 'btn btn-success'
+  .row
+    .col-xs-12
+      = f.submit 'Create person', class: 'btn btn-success'
