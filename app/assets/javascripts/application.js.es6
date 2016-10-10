@@ -5,8 +5,10 @@
 //= require turbolinks
 //= require leaflet
 //= require vue
-//
+//= require leaflet
+///
 //= require_directory ./Place
+//= require_directory ./Map
 //
 //= require_tree .
 
@@ -17,7 +19,6 @@ $(document).on('turbolinks:load', () => {
 
   window.ft = window.ft || {}
   ft.PlaceInitializer = new PlaceInitializer('#places')
-
 
     var map = L.map('map', {
       scrollWheelZoom: false,
@@ -102,4 +103,5 @@ $(document).on('turbolinks:load', () => {
       var featureGroup = L.featureGroup(markers);
       map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
     }
+  // ft.MapBuilder = new MapBuilder()
 })
