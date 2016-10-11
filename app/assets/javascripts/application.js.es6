@@ -23,8 +23,8 @@ $(document).on('turbolinks:load', () => {
     container: document.querySelector('#address-input')
   })
 
-  placesAutocomplete.on('suggestions',   ft.mapUpdater.handleOnSuggestions)
-  placesAutocomplete.on('cursorchanged', ft.mapUpdater.handleOnCursorchanged)
-  placesAutocomplete.on('change',        ft.mapUpdater.handleOnChange)
-  placesAutocomplete.on('clear',         ft.mapUpdater.handleOnClear)
+  placesAutocomplete.on('suggestions',   (e) => ft.mapUpdater.handleOnSuggestions(e))
+  placesAutocomplete.on('cursorchanged', (e) => ft.mapUpdater.handleOnCursorchanged(e))
+  placesAutocomplete.on('change',        (e) => ft.mapUpdater.handleOnChange(e))
+  placesAutocomplete.on('clear',         (e) => ft.mapUpdater.handleOnClear(e))
 })
