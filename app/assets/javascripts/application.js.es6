@@ -7,8 +7,8 @@
 //= require vue
 //= require leaflet
 ///
-//= require_directory ./Place
-//= require_directory ./Map
+//= require_directory ./place
+//= require_directory ./map
 //
 //= require_tree .
 
