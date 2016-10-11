@@ -1,9 +1,9 @@
 class MapUpdater {
-  constructor (mapBuilder) {
+  constructor(mapBuilder) {
     this.mapBuilder = mapBuilder
   }
 
-  handleOnSuggestions (event) {
+  handleOnSuggestions(event) {
     console.log(this)
     this.mapBuilder.removeMarkers()
 
@@ -17,12 +17,12 @@ class MapUpdater {
     this.mapBuilder.findBestZoom()
   }
 
-  handleOnClear () {
+  handleOnClear() {
     this.mapBuilder.setView(0, 0, 1)
     this.mapBuilder.removeMarkers()
   }
 
-  handleOnChange (event) {
+  handleOnChange(event) {
     this.mapBuilder.markers.forEach((marker, markerIndex) => {
       if (markerIndex === event.suggestionIndex) {
         this.mapBuilder.markers = [marker]
@@ -35,7 +35,7 @@ class MapUpdater {
     }, this)
   }
 
-  handleOnCursorchanged (event) {
+  handleOnCursorchanged(event) {
     this.mapBuilder.markers.forEach((marker, markerIndex) => {
       if (markerIndex === event.suggestionIndex) {
         marker.setOpacity(1)

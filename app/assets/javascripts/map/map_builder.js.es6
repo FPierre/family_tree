@@ -1,5 +1,5 @@
 class MapBuilder {
-  constructor (mapEl, lat, lng, zoom = 13) {
+  constructor(mapEl, lat, lng, zoom = 13) {
     this.map = L.map(mapEl)
 
     L.Icon.Default.imagePath = '/assets'
@@ -18,27 +18,27 @@ class MapBuilder {
     this.map.addLayer(osmLayer)
   }
 
-  setView (lat = 0, lng = 0, zoom = 13) {
+  setView(lat = 0, lng = 0, zoom = 13) {
     this.map.setView(new L.LatLng(lat, lng), zoom)
   }
 
-  addMarker (suggestion) {
+  addMarker(suggestion) {
     var marker = L.marker(suggestion.latlng, { opacity: .4 })
 
     marker.addTo(this.map)
     this.markers.push(marker)
   }
 
-  removeMarker (marker) {
+  removeMarker(marker) {
     this.map.removeLayer(marker)
   }
 
-  removeMarkers () {
+  removeMarkers() {
     this.markers.forEach(this.removeMarker, this)
     this.markers = []
   }
 
-  findBestZoom () {
+  findBestZoom() {
     var featureGroup = L.featureGroup(this.markers)
 
     this.map.fitBounds(featureGroup.getBounds().pad(0.5), { animate: false })
