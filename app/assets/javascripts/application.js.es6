@@ -9,6 +9,7 @@
 ///
 //= require_directory ./place
 //= require_directory ./map
+//= require_directory ./right_sidebar
 //
 //= require_tree .
 
@@ -18,7 +19,7 @@ $(document).on('turbolinks:load', () => {
   // window.ft.placeInitializer = new PlaceInitializer('#places')
   // window.ft.mapBuilder       = new MapBuilder('map', 0, 0, 13)
   // window.ft.mapUpdater       = new MapUpdater(window.ft.mapBuilder)
-  window.ft.rightSidebar     = new RightSidebar()
+  // window.ft.rightSidebar     = new RightSidebar()
 
   // const placesAutocomplete = places({
   //   container: document.querySelector('#address-input')
