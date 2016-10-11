@@ -2,16 +2,20 @@
   position: fixed;
   top: 54px;
   right: 0;
-  width: 20%;
+  width: 350px;
   height: 100%;
-  background-color: #fff;
+  color: #fff;
+  // background-color: #fff;
+  background-color: #3c485d;
+  z-index: 9999;
 
   .commands {
-    color: #fff;
-    background-color: #3c485d;
+    a {
+      color: inherit;
+    }
   }
 
   #map {
-    height: 200px;
+    height: 500px;
   }
 }
