@@ -1,13 +1,16 @@
-.aside {
+#right-sidebar {
   position: fixed;
   top: 54px;
   right: 0;
   width: 350px;
   height: 100%;
   color: #fff;
-  // background-color: #fff;
   background-color: #3c485d;
   z-index: 9999;
+
+  &.hidden {
+    width: 50px;
+  }
 
   .commands {
     a {

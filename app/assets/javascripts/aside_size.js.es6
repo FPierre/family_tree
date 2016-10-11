@@ -1,5 +1,0 @@
-class AsideSize {
-  constructor () {
-
-  }
-}

@@ -1,6 +1,7 @@
 class PlaceInitializer {
   constructor(vueEl) {
     this.vueEl = vueEl
+
     this.initVue()
   }
 

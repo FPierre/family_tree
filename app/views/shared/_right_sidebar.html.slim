@@ -1,17 +1,16 @@
-.aside
+#right-sidebar :class='{ hidden: hidden }'
   .container
     .row
       .col-xs-12
         .commands
           ul.nav.nav-pills
             li.nav-item
-              a.nav-link.active href='#' Load info
+              a.nav-link.active href='#' Information
 
             li.nav-item
               a.nav-link href='#' Comment
 
-            li.nav-item
-              / a.nav-link href='#' Comment
+            li.nav-item @click='hide'
               a = fa_icon 'arrow-right', class: 'nav-link'
 
     .row
